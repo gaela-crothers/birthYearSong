@@ -6,9 +6,11 @@ var spotifyApi = new SpotifyWebApi()
 
 module.exports = router
 
-var year = 2012
+var year = 2010
 
-spotifyApi.searchTracks('track:the year:' + year)
+router.get('/', function(req, res, next) {
+
+  spotifyApi.searchTracks('track:the year:' + year)
   .then(function(data) {
     var randomNum = Math.floor( Math.random() * (20) )
 
@@ -18,8 +20,11 @@ spotifyApi.searchTracks('track:the year:' + year)
       album: data.body.tracks.items[randomNum].album.name,
       songURI: data.body.tracks.items[randomNum].id
     }
-    
-    console.log(songData);
-  }, function(err) {
-    console.error(err)
+    console.log(songData)
+    res.render('showSong', songData)
+
   })
+  .catch(function(error) {
+    console.log(error);
+  })
+})
