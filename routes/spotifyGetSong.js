@@ -6,19 +6,16 @@ var spotifyApi = new SpotifyWebApi()
 
 module.exports = router
 
-spotifyApi.searchTracks('track:Love year:2014')
+var year = 2012
+
+spotifyApi.searchTracks('track:the year:' + year)
   .then(function(data) {
-    console.log('Search by "Love" 2014 - first result is', data.body.tracks.items[0])
-    console.log('Search by "Love" 2014 (first result) - track name is', data.body.tracks.items[0].name)
-    console.log('Search by "Love" 2014 (first result) - artist is', data.body.tracks.items[0].artists[0].name)
-    console.log('Search by "Love" 2014 (first result) - album is', data.body.tracks.items[0].album.name)
-    console.log('Search by "Love" 2014 (first result) - Spotify ID is', data.body.tracks.items[0].id)
+    var randomNum = Math.floor( Math.random() * (20) )
+
+    console.log('Search for random 2014 track with "the" - track name is', data.body.tracks.items[randomNum].name)
+    console.log('Search for random 2014 track with "the" - artist is', data.body.tracks.items[randomNum].artists[0].name)
+    console.log('Search for random 2014 track with "the" - album is', data.body.tracks.items[randomNum].album.name)
+    console.log('Search for random 2014 track with "the" - Spotify ID is', data.body.tracks.items[randomNum].id)
   }, function(err) {
     console.error(err)
   })
-
-
-/* GET users listing. */
-// router.get('/', function(req, res, next) {
-//   res.send('respond with a resource');
-// });
