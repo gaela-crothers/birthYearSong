@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
       songURI: data.body.tracks.items[randomNum].id
     }
     console.log(songData)
-    res.render('showSong', songData)
+    // res.render('showSong', songData)
 
   })
   .catch(function(error) {
