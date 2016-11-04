@@ -15,13 +15,13 @@ router.get('/', function(req, res, next) {
     var randomNum = Math.floor( Math.random() * (20) )
 
     var songData = {
-      title: data.body.tracks.items[randomNum].name,
+      songTitle: data.body.tracks.items[randomNum].name,
       artist: data.body.tracks.items[randomNum].artists[0].name,
       album: data.body.tracks.items[randomNum].album.name,
       songURI: data.body.tracks.items[randomNum].id
     }
     console.log(songData)
-    // res.render('showSong', songData)
+    res.render('showSong', songData)
 
   })
   .catch(function(error) {
