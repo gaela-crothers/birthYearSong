@@ -1,10 +1,13 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Catamaran', sans-serif;
   text-align: center;
   margin: 0 auto;
   color: white;
+  background-color: black;
   background-image: url("http://www.metalsucks.net/wp-content/uploads/2014/10/vinyl_image.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 a {
@@ -16,21 +19,42 @@ h1{
 }
 
 button{
-  background-color: grey;
+  background-color: #6C7A89;
   border: none;
   color: white;
-  padding: 15px 32px;
+  font-family: 'Catamaran', sans-serif;
+  padding: 10px 25px;
   text-align: center;
   text-decoration:none;
   display: inline-block;
   font-size: 16px;
   margin:4px 2px;
   cursor: pointer;
+  border-radius: 10px;
+}
+
+button:hover {
+
 }
 
 footer{
-  position: absolute;
-  bottom: 20px;
+  /*position: absolute;*/
+  align-self: center;
+  /*bottom: 40px;*/
   color: white;
-  text-align: center;
+  padding: 20px;
+  /*text-align: center;*/
+}
+
+ul {
+  list-style-type: none;
+  font-size: 1.2rem;
+}
+
+.player {
+  margin: 40px 0
+}
+
+span {
+  color: #6C7A89;
 }

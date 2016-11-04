@@ -1,15 +1,17 @@
-<h1>{{title}}</h1>
+<h1>Here is a popular song from your year of birth</h1>
 
-Here is the song from your year of Birth
-<br>
 <ul>
-  <li>Title: {{songTitle}}</li>
-  <li>Artist: {{artist}}</li>
-  <li>Album: {{album}}</li>
+  <li><span>Title:</span> {{songTitle}}</li>
+  <li><span>Artist:</span> {{artist}}</li>
+  <li><span>Album:</span> {{album}}</li>
 </ul>
 
-<iframe src="https://embed.spotify.com/?uri=spotify:track:{{songURI}}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+<div class="player">
+  <iframe src="https://embed.spotify.com/?uri=spotify:track:{{songURI}}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+</div>
 
+<div class="links">
   <a href="javascript:history.go(0)"><button type="submit" name="New Song">Get a new song from this year</button></a>
   <a href="/"><button type="submit" name="New Year">Select new year</button></a>
   <button type="submit" name="Share Song">Share Song</button>
+</div>
