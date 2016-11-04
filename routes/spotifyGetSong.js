@@ -28,7 +28,7 @@ router.get('/', function(req, res, next) {
 })
 
 function tweetSong (songObject) {
-    songObject.twitterURL = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(songObject.songTitle + " - " + songObject.artist)
+    songObject.twitterURL = "https://twitter.com/intent/tweet?text=" + encodeURIComponent("Check out this song from the year I was born: " + songObject.songTitle + " - " + songObject.artist)
     return songObject
 
 }
