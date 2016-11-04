@@ -18,10 +18,17 @@ router.get('/', function(req, res, next) {
       songURI: data.body.tracks.items[randomNum].id
     }
     console.log(songData)
-    res.render('showSong', songData)
+    var songObjectWithTweet = tweetSong(songData)
+    res.render('showSong', songObjectWithTweet)
 
   })
   .catch(function(error) {
     console.log(error);
   })
 })
+
+function tweetSong (songObject) {
+    songObject.twitterURL = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(songObject.songTitle + " - " + songObject.artist)
+    return songObject
+
+}
