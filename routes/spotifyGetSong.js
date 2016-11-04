@@ -6,11 +6,8 @@ var spotifyApi = new SpotifyWebApi()
 
 module.exports = router
 
-var year = 2010
-
-router.get('/', function(req, res, next) { 
-
-  spotifyApi.searchTracks('track:the year:' + year)
+router.get('/', function(req, res, next) {
+  spotifyApi.searchTracks('track:the year:' + req.query.year)
   .then(function(data) {
     var randomNum = Math.floor( Math.random() * (20) )
 
