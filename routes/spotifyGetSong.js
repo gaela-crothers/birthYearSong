@@ -8,7 +8,7 @@ module.exports = router
 
 var year = 2010
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res, next) { 
 
   spotifyApi.searchTracks('track:the year:' + year)
   .then(function(data) {
